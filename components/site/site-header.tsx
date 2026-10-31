@@ -18,7 +18,7 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight text-foreground">
       <span aria-hidden="true" className="size-6 rounded-full bg-foreground" />
-      <span>E-commerce</span>
+      <span>E-commerce_Skills</span>
     </Link>
   )
 }

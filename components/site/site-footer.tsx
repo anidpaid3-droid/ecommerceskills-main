@@ -48,7 +48,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-sidebar-border">
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-sidebar-foreground/60 md:px-6">
-          {'© 2026 Skillhouse. All rights reserved.'}
+          {'© 2026 E-commerce_Skills. All rights reserved.'}
         </p>
       </div>
     </footer>
