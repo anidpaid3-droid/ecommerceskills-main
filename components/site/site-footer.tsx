@@ -1,6 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
+import { ArrowRight, Check } from 'lucide-react'
 import { Logo } from './logo'
-import { NewsletterForm } from './newsletter-form'
 
 const BRAND = 'E-commerce_Skills'
 
@@ -35,6 +38,52 @@ const LEGAL = [
   { href: '/privacy', label: 'Privacy' },
   { href: '/terms', label: 'Terms' },
 ]
+
+function NewsletterForm() {
+  const [email, setEmail] = useState('')
+  const [done, setDone] = useState(false)
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (!email.trim()) return
+    // TODO: pore /api/subscribe e POST kore MongoDB te save korbo
+    setDone(true)
+    setEmail('')
+  }
+
+  if (done) {
+    return (
+      <p className="flex items-center gap-2 text-sm font-medium text-sidebar-foreground">
+        <Check className="size-4 text-sidebar-primary" aria-hidden="true" />
+        Thanks for subscribing. Check your inbox soon.
+      </p>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col gap-2 sm:flex-row">
+      <label htmlFor="newsletter-email" className="sr-only">
+        Email address
+      </label>
+      <input
+        id="newsletter-email"
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="you@example.com"
+        className="h-10 flex-1 rounded-lg border border-sidebar-border bg-sidebar-foreground/10 px-3 text-sm text-sidebar-foreground placeholder:text-sidebar-foreground/50 focus:outline-none focus:ring-2 focus:ring-sidebar-primary"
+      />
+      <button
+        type="submit"
+        className="inline-flex h-10 items-center justify-center gap-1.5 rounded-lg bg-sidebar-primary px-4 text-sm font-medium text-sidebar-primary-foreground transition-opacity hover:opacity-90"
+      >
+        Subscribe
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </button>
+    </form>
+  )
+}
 
 export function SiteFooter() {
   return (
