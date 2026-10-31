@@ -10,7 +10,7 @@ export function Logo({ className, href = '/' }: { className?: string; href?: str
       >
         S
       </span>
-      Skillhouse
+      E-commerce_Skills
     </Link>
   )
 }
