@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Policies',
-  description: 'Privacy, terms of use, refund and cookie policies.',
+  description: 'Policies, terms of use, refund and cookie policies.',
 }
 
 // Ekhane bodlale pura page e update hoye jabe
