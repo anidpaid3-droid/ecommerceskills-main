@@ -14,7 +14,7 @@ const REFUND_DAYS = 7
 const SECTIONS = [
   {
     id: 'Policy',
-    title: 'Privacy Policy',
+    title: 'Policy',
     intro: `${BRAND} respects your privacy. This section explains what we collect, why we collect it and how you stay in control.`,
     items: [
       {
